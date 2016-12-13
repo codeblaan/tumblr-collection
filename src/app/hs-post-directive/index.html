@@ -7,9 +7,8 @@
     <img ng-src="{{post.photos[0].original_size.url}}"/>
   </div>
   <div ng-if="post.type === 'quote'">
-    <blockquote>
-      {{post.text}} <span ng-bind-html="htmlSafe(post.source)"></span>
-    </blockquote>
+    <blockquote>{{post.text}}</blockquote>
+    <span ng-bind-html="htmlSafe(post.source)"></span>
   </div>
   <div ng-if="post.type === 'link'">
     <a ng-href="{{post.url}}">{{post.title}}</a>
