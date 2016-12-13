@@ -10,6 +10,7 @@ import tumblrService from './tumblr-service';
 
 let appDirective = () => {
   return {
+    restrict: 'E',
     template: require('./app.html'),
     scope: {},
     link: scope => {

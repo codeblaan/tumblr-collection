@@ -2,6 +2,7 @@ import './index.css';
 
 export default function() {
   return {
+    restrict: 'E',
     template: require('./index.html'),
     scope: {
       favorites: '='

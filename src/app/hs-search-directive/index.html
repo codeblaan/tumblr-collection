@@ -13,4 +13,7 @@
     <div class="button button-clear hsSearch-postAction" ng-click="addPost(post)">Add</div>
     <hs-post post="post"></hs-post>
   </div>
+  <div ng-if="results.totalPosts > results.posts.length" class="hsSearch-showMore">
+    <button class="button" ng-click="showMore(results)">Show More</button>
+  </div>
 </div>
