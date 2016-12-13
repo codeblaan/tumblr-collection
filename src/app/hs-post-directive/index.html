@@ -27,8 +27,8 @@
   </div>
   <div ng-if="post.type === 'answer'">
     <h2>Question</h2>
-    <div>{{post.question}}</div>
+    <div ng-bind-html="htmlSafe(post.question)"></div>
     <h2>Answer</h2>
-    <div>{{post.answer}}</div>
+    <div ng-bind-html="htmlSafe(post.answer)"></div>
   </div>
 </div>
