@@ -2,19 +2,20 @@ import app from './app';
 
 describe('app', () => {
 
-  describe('AppCtrl', () => {
-    let ctrl;
+  describe('AppDirective', () => {
+    let element;
 
     beforeEach(() => {
       angular.mock.module(app);
 
-      angular.mock.inject(($controller) => {
-        ctrl = $controller('AppCtrl', {});
+      angular.mock.inject(($compile, $rootScope) => {
+        let scope = $rootScope.$new();
+        element = $compile('<app></app>')(scope);
       });
     });
 
-    it('should contain the starter url', () => {
-      expect(ctrl.url).toBe('https://github.com/preboot/angular-webpack');
+    it('should contain Search', () => {
+      expect(element.text()).toContain('Search');
     });
   });
 });
