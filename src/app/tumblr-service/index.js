@@ -23,10 +23,7 @@ function Service($http, $sce, $q) {
       return $http
         .jsonp(blogApiUrl(blogName, blogTag, offset))
         .then(response => new Result(response.data.response.posts, response.data.response.total_posts),
-          error => {
-            console.log('error', error);
-            return new Result([], 0)
-          });
+          error => new Result([], 0));
     }
   }
 

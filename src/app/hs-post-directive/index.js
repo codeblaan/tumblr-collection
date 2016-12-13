@@ -7,7 +7,7 @@ export default function($sce) {
     scope: {
       post: '='
     },
-    link: (scope) => {
+    link: scope => {
       scope.htmlSafe = $sce.trustAsHtml;
     }
   }

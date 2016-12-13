@@ -1,30 +1,30 @@
-<div class="hsPost">
-  <div ng-if="post.type === 'text'">
+<div class="hsPost" ng-switch on="post.type">
+  <div ng-switch-when="text">
     <h2 ng-bind-html="htmlSafe(post.title)"></h2>
     <div ng-bind-html="htmlSafe(post.body)"></div>
   </div>
-  <div ng-if="post.type === 'photo'">
+  <div ng-switch-when="photo">
     <img ng-src="{{post.photos[0].original_size.url}}"/>
   </div>
-  <div ng-if="post.type === 'quote'">
+  <div ng-switch-when="quote">
     <blockquote>{{post.text}}</blockquote>
     <span ng-bind-html="htmlSafe(post.source)"></span>
   </div>
-  <div ng-if="post.type === 'link'">
+  <div ng-switch-when="link">
     <a ng-href="{{post.url}}">{{post.title}}</a>
   </div>
-  <div ng-if="post.type === 'chat'">
+  <div ng-switch-when="chat">
     <div ng-repeat="convo in post.dialogue">
       <span>{{convo.label}} {{convo.phrase}}</span>
     </div>
   </div>
-  <div ng-if="post.type === 'audio'">
+  <div ng-switch-when="audio">
     <div ng-bind-html="htmlSafe(post.player)"></div>
   </div>
-  <div ng-if="post.type === 'video'">
+  <div ng-switch-when="video">
     <div ng-bind-html="htmlSafe(post.player[0].embed_code)"></div>
   </div>
-  <div ng-if="post.type === 'answer'">
+  <div ng-switch-when="answer">
     <h2>Question</h2>
     <div ng-bind-html="htmlSafe(post.question)"></div>
     <h2>Answer</h2>
