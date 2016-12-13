@@ -1,5 +1,4 @@
 .hsPost {
-  text-align: center;
   min-height: 40px;
   background-color: #f4f5f6;
 }
@@ -10,4 +9,8 @@
 
 .hsPost img {
   max-width: 100%;
+}
+
+.hsPost iframe {
+  width: 100%;
 }

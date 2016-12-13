@@ -1,5 +1,6 @@
 .hsFavorites .hsFavorites-postAction {
   text-align: right;
+  padding: 0 20px;
   width: 100%;
   float: right;
 }
