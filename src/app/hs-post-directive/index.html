@@ -7,14 +7,15 @@
     <img ng-src="{{post.photos[0].original_size.url}}"/>
   </div>
   <div ng-if="post.type === 'quote'">
-    <div class="hsPost-quote">{{post.text}}</div>
-    <div><span> - </span><span ng-bind-html="htmlSafe(post.source)"></span></div>
+    <blockquote>
+      {{post.text}} <span ng-bind-html="htmlSafe(post.source)"></span>
+    </blockquote>
   </div>
   <div ng-if="post.type === 'link'">
     <a ng-href="{{post.url}}">{{post.title}}</a>
   </div>
   <div ng-if="post.type === 'chat'">
-    <div class="hsPost-chat" ng-repeat="convo in post.dialogue">
+    <div ng-repeat="convo in post.dialogue">
       <span>{{convo.label}} {{convo.phrase}}</span>
     </div>
   </div>

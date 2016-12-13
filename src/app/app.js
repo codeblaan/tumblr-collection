@@ -1,6 +1,7 @@
 import angular from 'angular';
 
 import './app.css';
+import '../../node_modules/milligram/dist/milligram.css';
 
 import hsSearchDirective from './hs-search-directive';
 import hsPostDirective from './hs-post-directive';
