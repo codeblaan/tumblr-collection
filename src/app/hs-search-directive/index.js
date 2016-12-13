@@ -1,9 +1,15 @@
+import './index.css';
+
 export default function(tumblr) {
   return {
     template: require('./index.html'),
+    scope: {
+      results: '=',
+      favorites: '='
+    },
     link: (scope) => {
       scope.blog = {};
-      scope.results = {};
+
       scope.search = (blog) => {
         if (!blog.name && !blog.tag) {
           scope.results.posts = [];
@@ -14,6 +20,10 @@ export default function(tumblr) {
         }, error => {
           scope.results.posts = [];
         });
+      };
+
+      scope.addPost = (post) => {
+        scope.favorites.posts.unshift(post);
       };
     }
   }

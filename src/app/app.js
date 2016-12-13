@@ -5,11 +5,19 @@ import '../../node_modules/milligram/dist/milligram.css';
 
 import hsSearchDirective from './hs-search-directive';
 import hsPostDirective from './hs-post-directive';
+import hsFavoritesDirective from './hs-favorites-directive';
 import tumblrService from './tumblr-service';
 
 let appDirective = () => {
   return {
-    template: require('./app.html')
+    template: require('./app.html'),
+    scope: {},
+    link: scope => {
+      scope.results = {};
+      scope.favorites = {
+        posts: []
+      };
+    }
   }
 };
 
@@ -19,6 +27,7 @@ angular.module(MODULE_NAME, [])
   .directive('app', appDirective)
   .service('tumblr', tumblrService)
   .directive('hsSearch', hsSearchDirective)
-  .directive('hsPost', hsPostDirective);
+  .directive('hsPost', hsPostDirective)
+  .directive('hsFavorites', hsFavoritesDirective);
 
 export default MODULE_NAME;

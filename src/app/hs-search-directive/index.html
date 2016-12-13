@@ -6,5 +6,8 @@
     <input ng-model="blog.tag" type="text" name="tag" />
     <input type="button" ng-click="search(blog)" value="Search" />
   </form>
-  <hs-post post="post" ng-repeat="post in results.posts"></hs-post>
+  <div ng-repeat="post in results.posts">
+    <div class="button button-clear hsSearch-postAction" ng-click="addPost(post)">Add</div>
+    <hs-post post="post"></hs-post>
+  </div>
 </div>
