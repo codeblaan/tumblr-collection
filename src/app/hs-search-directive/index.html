@@ -8,6 +8,7 @@
     <input type="submit" value="Search" />
   </form>
   <h5 ng-if="results.posts.length > 0">Results</h5>
+  <h5 ng-if="results.posts.length === 0">No Results</h5>
   <div ng-repeat="post in results.posts">
     <div class="button button-clear hsSearch-postAction" ng-click="addPost(post)">Add</div>
     <hs-post post="post"></hs-post>

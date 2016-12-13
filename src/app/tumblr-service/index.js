@@ -1,4 +1,4 @@
-export default function($http, $sce) {
+export default function($http, $sce, $q) {
   const API_KEY = 'ifJyOYcIVoAYQ9PyHF1nCYDkMOS1phoXZpei5ZIRnMUJJfXQhY';
   const BASE_URL = 'https://api.tumblr.com/v2';
 
@@ -7,6 +7,9 @@ export default function($http, $sce) {
   }
 
   function getPosts(blogName, blogTag, offset=0) {
+    if (!blogName && !blogTag) {
+      return $q.when([]);
+    }
     if (useTaggedApi(blogName, blogTag)) {
       return $http
         .jsonp(taggedApiUrl(blogTag, offset))
