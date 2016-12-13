@@ -1,5 +1,5 @@
 <div class="hsFavorites">
-  <h2>Favorites</h2>
+  <h5 ng-if="favorites.posts.length > 0">Favorites</h5>
   <div ng-repeat="post in favorites.posts track by $index">
     <div class="button button-clear hsFavorites-postAction" ng-click="removePostAtIndex($index)">Remove</div>
     <hs-post post="post"></hs-post>

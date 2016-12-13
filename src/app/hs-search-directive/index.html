@@ -1,4 +1,5 @@
 <div class="hsSearch">
+  <h5>Search</h5>
   <form novalidate>
     <label name="name">Blog Name</label>
     <input ng-model="blog.name" type="text" name="name" />
@@ -6,6 +7,7 @@
     <input ng-model="blog.tag" type="text" name="tag" />
     <input type="button" ng-click="search(blog)" value="Search" />
   </form>
+  <h5 ng-if="results.posts.length > 0">Results</h5>
   <div ng-repeat="post in results.posts">
     <div class="button button-clear hsSearch-postAction" ng-click="addPost(post)">Add</div>
     <hs-post post="post"></hs-post>
