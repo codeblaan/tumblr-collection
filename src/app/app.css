@@ -1,3 +1,7 @@
 main {
   padding: 20px;
 }
+
+main .hsPost {
+  margin: 20px 0;
+}

@@ -1,0 +1,33 @@
+<div class="hsPost">
+  <div ng-if="post.type === 'text'">
+    <h2>{{post.title}}</h2>
+    <div ng-bind-html="htmlSafe(post.body)"></div>
+  </div>
+  <div ng-if="post.type === 'photo'">
+    <img ng-src="{{post.photos[0].original_size.url}}"/>
+  </div>
+  <div ng-if="post.type === 'quote'">
+    <div class="hsPost-quote">{{post.text}}</div>
+    <div><span> - </span><span ng-bind-html="htmlSafe(post.source)"></span></div>
+  </div>
+  <div ng-if="post.type === 'link'">
+    <a ng-href="{{post.url}}">{{post.title}}</a>
+  </div>
+  <div ng-if="post.type === 'chat'">
+    <div class="hsPost-chat" ng-repeat="convo in post.dialogue">
+      <span>{{convo.label}} {{convo.phrase}}</span>
+    </div>
+  </div>
+  <div ng-if="post.type === 'audio'">
+    <div ng-bind-html="htmlSafe(post.player)"></div>
+  </div>
+  <div ng-if="post.type === 'video'">
+    <div ng-bind-html="htmlSafe(post.player[0].embed_code)"></div>
+  </div>
+  <div ng-if="post.type === 'answer'">
+    <h2>Question</h2>
+    <div>{{post.question}}</div>
+    <h2>Answer</h2>
+    <div>{{post.answer}}</div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.hsPost {
+  min-height: 40px;
+  border: 1px solid black;
+}
+
+.hsPost .hsPost-quote {
+  background-color: grey;
+}
+
+.hsPost img {
+  max-width: 100%;
+}
